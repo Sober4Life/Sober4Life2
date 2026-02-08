@@ -1,1 +1,177 @@
-<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Sober4Life Support Portal</title>\n    <link rel="stylesheet" href="styles.css">\n    <style>\n        /* Example CSS for grid layout, responsive design, and hover effects */\n        .services-grid {\n            display: grid;\n            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n            gap: 20px;\n        }\n        .service {\n            background: #f1f1f1;\n            padding: 20px;\n            border-radius: 8px;\n            transition: transform 0.3s;\n        }\n        .service:hover {\n            transform: scale(1.05);\n        }\n    </style>\n</head>\n<body>\n\n<header>\n    <h1>Sober4Life Support Portal</h1>\n</header>\n\n<main>\n    <section class="services">\n        <div class="services-grid">\n            <div class="service">Support Service 1</div>\n            <div class="service">Support Service 2</div>\n            <div class="service">Support Service 3</div>\n            <div class="service">Support Service 4</div>\n            <div class="service">Support Service 5</div>\n            <div class="service">Support Service 6</div>\n            <div class="service">Support Service 7</div>\n            <div class="service">Support Service 8</div>\n            <div class="service">Support Service 9</div>\n            <div class="service">Support Service 10</div>\n        </div>\n    </section>\n</main>\n\n<footer>\n    <p>&copy; 2026 Sober4Life. All rights reserved.</p>\n</footer>\n\n</body>\n</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sober4Life Support Portal</title>
+<style>
+  /* ===== Global Styles ===== */
+  body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #222;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* ===== Header ===== */
+  header {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 36px;
+  }
+
+  header p {
+    margin: 8px 0 0 0;
+    font-size: 16px;
+    color: #00C853;
+  }
+
+  /* ===== Container ===== */
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 20px;
+  }
+
+  /* ===== Grid ===== */
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+  }
+
+  .grid-item {
+    background-color: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+    transition: transform 0.25s;
+  }
+
+  .grid-item:hover {
+    transform: scale(1.05);
+  }
+
+  .grid-item img {
+    max-width: 80px;
+    margin-bottom: 12px;
+  }
+
+  .grid-item h3 {
+    font-size: 16px;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  /* ===== Footer ===== */
+  footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+  }
+
+  footer a {
+    color: #00C853;
+  }
+
+  /* ===== Responsive ===== */
+  @media(max-width: 768px) {
+    .grid-item {
+      width: 45%;
+    }
+  }
+
+  @media(max-width: 480px) {
+    .grid-item {
+      width: 90%;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>SOBER4LIFE Portal</h1>
+  <p>Trusted Australian support services at your fingertips</p>
+</header>
+
+<div class="container">
+  <div class="grid">
+    <!-- Example: Real services from existing portal -->
+    <a class="grid-item" href="https://www.lifeline.org.au/" target="_blank">
+      <img src="images/lifeline.png" alt="Lifeline">
+      <h3>Lifeline</h3>
+    </a>
+
+    <a class="grid-item" href="https://www.beyondblue.org.au/" target="_blank">
+      <img src="images/beyondblue.png" alt="Beyond Blue">
+      <h3>Beyond Blue</h3>
+    </a>
+
+    <a class="grid-item" href="https://www.headspace.org.au/" target="_blank">
+      <img src="images/headspace.png" alt="Headspace">
+      <h3>Headspace</h3>
+    </a>
+
+    <a class="grid-item" href="https://kidshelpline.com.au/" target="_blank">
+      <img src="images/kidshelpline.png" alt="Kids Helpline">
+      <h3>Kids Helpline</h3>
+    </a>
+
+    <a class="grid-item" href="https://mensline.org.au/" target="_blank">
+      <img src="images/mensline.png" alt="MensLine Australia">
+      <h3>MensLine Australia</h3>
+    </a>
+
+    <a class="grid-item" href="https://www.lifeline.org.au/crisis-support/womensline/" target="_blank">
+      <img src="images/womensline.png" alt="WomensLine Australia">
+      <h3>WomensLine</h3>
+    </a>
+
+    <a class="grid-item" href="https://www.health.gov.au/contacts/national-alcohol-and-other-drug-hotline" target="_blank">
+      <img src="images/aodhotline.png" alt="AOD Hotline">
+      <h3>AOD Hotline</h3>
+    </a>
+
+    <a class="grid-item" href="https://smartrecoveryaustralia.com.au/" target="_blank">
+      <img src="images/smartrecovery.png" alt="SMART Recovery">
+      <h3>SMART Recovery</h3>
+    </a>
+
+    <a class="grid-item" href="https://www.lifeline.org.au/get-help/national-services/counselling-online-alcohol-drugs" target="_blank">
+      <img src="images/counsellingonline.png" alt="Counselling Online">
+      <h3>Counselling Online</h3>
+    </a>
+
+    <a class="grid-item" href="https://adf.org.au/help-support/path2help" target="_blank">
+      <img src="images/path2help.png" alt="Path2Help">
+      <h3>Path2Help</h3>
+    </a>
+
+    <!-- Add any additional services exactly as in your portal here -->
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 Sober4Life | <a href="https://sober4life.github.io/Sober4Life/" target="_blank">Visit Portal</a></p>
+</footer>
+
+</body>
+</html>
