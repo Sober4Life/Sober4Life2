@@ -152,4 +152,62 @@
 <section class="hero" id="home">
   <h1>Sobriety. Identity. Support. For Life.</h1>
   <img src="qr_placeholder.png" alt="Scan QR code to access portal" class="qr">
-<
+</section>
+
+<!-- FILTER BUTTONS -->
+<div class="filters">
+  <button data-category="all">All</button>
+  <button data-category="immediate">Immediate Help</button>
+  <button data-category="wellness">Wellness</button>
+  <button data-category="community">Community</button>
+</div>
+
+<!-- CARDS GRID -->
+<section class="cards">
+  <div class="card" data-category="immediate">
+    <img src="partner1_logo.png" alt="Partner 1 Logo">
+    <h3>Partner 1</h3>
+    <p>Immediate support and resources for sobriety.</p>
+    <button onclick="window.open('#','_blank')">Visit</button>
+  </div>
+  <div class="card" data-category="wellness">
+    <img src="partner2_logo.png" alt="Partner 2 Logo">
+    <h3>Partner 2</h3>
+    <p>Health and wellness support to strengthen recovery.</p>
+    <button onclick="window.open('#','_blank')">Visit</button>
+  </div>
+  <div class="card" data-category="community">
+    <img src="partner3_logo.png" alt="Partner 3 Logo">
+    <h3>Partner 3</h3>
+    <p>Connect with sober community events and groups.</p>
+    <button onclick="window.open('#','_blank')">Visit</button>
+  </div>
+  <!-- Add more cards as needed -->
+</section>
+
+<!-- FOOTER -->
+<footer>
+  &copy; 2026 Sober4Life. Sobriety. Identity. Support. For Life.
+</footer>
+
+<!-- FILTERING SCRIPT -->
+<script>
+  const filterButtons = document.querySelectorAll('.filters button');
+  const cards = document.querySelectorAll('.card');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const category = btn.getAttribute('data-category');
+      cards.forEach(card => {
+        if(category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
