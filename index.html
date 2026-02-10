@@ -1,177 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sober4Life Support Portal</title>
-<style>
-  /* ===== Global Styles ===== */
-  body {
-    margin: 0;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #222;
-  }
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  /* ===== Header ===== */
-  header {
-    background-color: #222;
-    color: #fff;
-    text-align: center;
-    padding: 30px 20px;
-  }
-
-  header h1 {
-    margin: 0;
-    font-size: 36px;
-  }
-
-  header p {
-    margin: 8px 0 0 0;
-    font-size: 16px;
-    color: #00C853;
-  }
-
-  /* ===== Container ===== */
-  .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 30px 20px;
-  }
-
-  /* ===== Grid ===== */
-  .grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    justify-content: center;
-  }
-
-  .grid-item {
-    background-color: #fff;
-    border-radius: 14px;
-    padding: 20px;
-    text-align: center;
-    width: 200px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-    transition: transform 0.25s;
-  }
-
-  .grid-item:hover {
-    transform: scale(1.05);
-  }
-
-  .grid-item img {
-    max-width: 80px;
-    margin-bottom: 12px;
-  }
-
-  .grid-item h3 {
-    font-size: 16px;
-    margin: 0;
-    font-weight: 600;
-  }
-
-  /* ===== Footer ===== */
-  footer {
-    background-color: #222;
-    color: #fff;
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
-  }
-
-  footer a {
-    color: #00C853;
-  }
-
-  /* ===== Responsive ===== */
-  @media(max-width: 768px) {
-    .grid-item {
-      width: 45%;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sober4Life Portal</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8f9fa; color: #222; }
+    header { background: #1e3a8a; color: #fff; padding: 20px 10px; text-align: center; }
+    header h1 { margin: 0; font-size: 2rem; }
+    nav { margin-top: 10px; }
+    nav a { color: #fff; margin: 0 10px; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .hero { background: #3b82f6; color: #fff; text-align: center; padding: 40px 20px; }
+    .hero img { max-width: 200px; margin-top: 20px; }
+    .section { padding: 30px 20px; max-width: 1000px; margin: auto; }
+    .section h2 { text-align: center; margin-bottom: 30px; }
+    .filters { text-align: center; margin-bottom: 20px; }
+    .filters button { margin: 0 5px; padding: 8px 12px; cursor: pointer; border: none; border-radius: 5px; background: #1e3a8a; color: #fff; font-weight: bold; }
+    .filters button:hover { background: #3b82f6; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .card { background: #fff; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    .card img { max-width: 120px; margin-bottom: 15px; }
+    .card h3 { margin: 10px 0; font-size: 1.1rem; }
+    .card p { font-size: 0.9rem; margin-bottom: 15px; }
+    .card a { display: inline-block; padding: 8px 12px; background: #3b82f6; color: #fff; border-radius: 5px; text-decoration: none; font-weight: bold; }
+    .card a:hover { background: #1e3a8a; }
+    footer { text-align: center; padding: 20px; background: #1e3a8a; color: #fff; margin-top: 40px; }
+    @media (max-width: 600px) {
+      .hero img { max-width: 150px; }
     }
-  }
-
-  @media(max-width: 480px) {
-    .grid-item {
-      width: 90%;
-    }
-  }
-
-</style>
+  </style>
 </head>
 <body>
 
 <header>
-  <h1>SOBER4LIFE Portal</h1>
-  <p>Trusted Australian support services at your fingertips</p>
+  <h1>Sober4Life Portal</h1>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#support">Support Networks</a>
+    <a href="#resources">Resources</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
-<div class="container">
-  <div class="grid">
-    <!-- Example: Real services from existing portal -->
-    <a class="grid-item" href="https://www.lifeline.org.au/" target="_blank">
-      <img src="images/lifeline.png" alt="Lifeline">
-      <h3>Lifeline</h3>
-    </a>
+<section class="hero" id="home">
+  <h2>Scan your Sober4Life wristband for instant support</h2>
+  <p>Verified Australian support networks and wellness resources at your fingertips.</p>
+  <img src="https://via.placeholder.com/150?text=QR+Code" alt="QR Code">
+</section>
 
-    <a class="grid-item" href="https://www.beyondblue.org.au/" target="_blank">
-      <img src="images/beyondblue.png" alt="Beyond Blue">
-      <h3>Beyond Blue</h3>
-    </a>
-
-    <a class="grid-item" href="https://www.headspace.org.au/" target="_blank">
-      <img src="images/headspace.png" alt="Headspace">
-      <h3>Headspace</h3>
-    </a>
-
-    <a class="grid-item" href="https://kidshelpline.com.au/" target="_blank">
-      <img src="images/kidshelpline.png" alt="Kids Helpline">
-      <h3>Kids Helpline</h3>
-    </a>
-
-    <a class="grid-item" href="https://mensline.org.au/" target="_blank">
-      <img src="images/mensline.png" alt="MensLine Australia">
-      <h3>MensLine Australia</h3>
-    </a>
-
-    <a class="grid-item" href="https://www.lifeline.org.au/crisis-support/womensline/" target="_blank">
-      <img src="images/womensline.png" alt="WomensLine Australia">
-      <h3>WomensLine</h3>
-    </a>
-
-    <a class="grid-item" href="https://www.health.gov.au/contacts/national-alcohol-and-other-drug-hotline" target="_blank">
-      <img src="images/aodhotline.png" alt="AOD Hotline">
-      <h3>AOD Hotline</h3>
-    </a>
-
-    <a class="grid-item" href="https://smartrecoveryaustralia.com.au/" target="_blank">
-      <img src="images/smartrecovery.png" alt="SMART Recovery">
-      <h3>SMART Recovery</h3>
-    </a>
-
-    <a class="grid-item" href="https://www.lifeline.org.au/get-help/national-services/counselling-online-alcohol-drugs" target="_blank">
-      <img src="images/counsellingonline.png" alt="Counselling Online">
-      <h3>Counselling Online</h3>
-    </a>
-
-    <a class="grid-item" href="https://adf.org.au/help-support/path2help" target="_blank">
-      <img src="images/path2help.png" alt="Path2Help">
-      <h3>Path2Help</h3>
-    </a>
-
-    <!-- Add any additional services exactly as in your portal here -->
+<section class="section" id="support">
+  <h2>Support Networks</h2>
+  <div class="filters">
+    <button onclick="filterCategory('all')">All</button>
+    <button onclick="filterCategory('immediate')">Immediate Help</button>
+    <button onclick="filterCategory('recovery')">Recovery</button>
+    <button onclick="filterCategory('wellness')">Wellness</button>
+    <button onclick="filterCategory('community')">Community</button>
   </div>
-</div>
+  <div class="grid">
+    <!-- Immediate Help -->
+    <div class="card" data-category="immediate">
+      <img src="https://via.placeholder.com/100?text=Lifeline" alt="Lifeline">
+      <h3>Lifeline</h3>
+      <p>24/7 crisis support and suicide prevention. Call 13 11 14.</p>
+      <a href="https://www.lifeline.org.au/" target="_blank">Visit Lifeline</a>
+    </div>
+    <div class="card" data-category="immediate">
+      <img src="https://via.placeholder.com/100?text=Suicide+Call+Back" alt="Suicide Call Back Service">
+      <h3>Suicide Call Back Service</h3>
+      <p>Immediate counselling support for mental health crises. Call 1300 659 467.</p>
+      <a href="https://www.suicidecallbackservice.org.au/" target="_blank">Visit Service</a>
+    </div>
+
+    <!-- Recovery -->
+    <div class="card" data-category="recovery">
+      <img src="https://via.placeholder.com/100?text=AA" alt="Alcoholics Anonymous">
+      <h3>Alcoholics Anonymous</h3>
+      <p>Support for people seeking sobriety from alcohol. Meetings across Australia.</p>
+      <a href="https://aa.org.au/" target="_blank">Visit AA</a>
+    </div>
+    <div class="card" data-category="recovery">
+      <img src="https://via.placeholder.com/100?text=NA" alt="Narcotics Anonymous">
+      <h3>Narcotics Anonymous</h3>
+      <p>Support for people seeking sobriety from drugs. Meetings nationwide.</p>
+      <a href="https://www.na.org.au/" target="_blank">Visit NA</a>
+    </div>
+    <div class="card" data-category="recovery">
+      <img src="https://via.placeholder.com/100?text=Beyond+Blue" alt="Beyond Blue">
+      <h3>Beyond Blue</h3>
+      <p>Mental health support including anxiety, depression, and addiction.</p>
+      <a href="https://www.beyondblue.org.au/" target="_blank">Visit Beyond Blue</a>
+    </div>
+
+    <!-- Wellness -->
+    <div class="card" data-category="wellness">
+      <img src="https://via.placeholder.com/100?text=Gym" alt="Local Gyms">
+      <h3>Local Gyms & Fitness</h3>
+      <p>Join supportive fitness communities that encourage sober living.</p>
+      <a href="#" target="_blank">Find a Gym</a>
+    </div>
+    <div class="card" data-category="wellness">
+      <img src="https://via.placeholder.com/100?text=Yoga" alt="Yoga & Meditation">
+      <h3>Yoga & Meditation</h3>
+      <p>Wellness programs to reduce stress and support sober living.</p>
+      <a href="#" target="_blank">Visit Wellness</a>
+    </div>
+
+    <!-- Community -->
+    <div class="card" data-category="community">
+      <img src="https://via.placeholder.com/100?text=Sober+Meetup" alt="Sober Meetup Groups">
+      <h3>Sober Meetup Groups</h3>
+      <p>Connect with local sober communities and peer mentors.</p>
+      <a href="#" target="_blank">Join a Group</a>
+    </div>
+    <div class="card" data-category="community">
+      <img src="https://via.placeholder.com/100?text=Online+Community" alt="Online Sober Community">
+      <h3>Online Sober Community</h3>
+      <p>Connect online with others maintaining sobriety and accountability.</p>
+      <a href="#" target="_blank">Visit Community</a>
+    </div>
+  </div>
+</section>
 
 <footer>
-  <p>&copy; 2026 Sober4Life | <a href="https://sober4life.github.io/Sober4Life/" target="_blank">Visit Portal</a></p>
+  <p>© 2026 Sober4Life | Sobriety. Identity. Support. For Life.</p>
 </footer>
+
+<script>
+function filterCategory(category) {
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(card => {
+    if(category === 'all' || card.dataset.category === category) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
 
 </body>
 </html>
