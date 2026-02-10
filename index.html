@@ -16,7 +16,7 @@
 
   /* --- HEADER --- */
   header {
-    background-color: #00a86b;
+    background-color: #00a86b; /* primary green */
     color: #fff;
     padding: 20px;
     display: flex;
@@ -56,7 +56,7 @@
     margin: 20px 0;
   }
   .filters button {
-    background-color: #00c875;
+    background-color: #00c875; /* accent green */
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -143,4 +143,31 @@
   <nav>
     <a href="#home">Home</a>
     <a href="#support">Support</a>
-    <a href="#resources">Resource
+    <a href="#resources">Resources</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <h1>Sobriety. Identity. Support. For Life.</h1>
+  <img src="https://via.placeholder.com/150?text=QR+Code" alt="Scan QR code to access portal" class="qr">
+</section>
+
+<!-- FILTER BUTTONS -->
+<div class="filters">
+  <button data-category="all">All</button>
+  <button data-category="immediate">Immediate Help</button>
+  <button data-category="wellness">Wellness</button>
+  <button data-category="community">Community</button>
+</div>
+
+<!-- SUPPORT CARDS -->
+<section class="cards">
+
+<!-- Immediate Help -->
+<div class="card" data-category="immediate">
+  <img src="https://via.placeholder.com/80?text=Lifeline" alt="Lifeline">
+  <h3>Lifeline</h3>
+  <p>24/7 crisis support and suicide prevention hotline.</p>
+  <button onclick="window.open('https://www.lifeline.org.au','_blank'_
