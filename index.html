@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sober4Life Portal</title>
+<title>Sober4Life Support Portal</title>
 <style>
   /* --- COLORS --- */
   body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: #f8f9fa; /* light grey background */
-    color: #222222; /* dark text */
+    background-color: #f8f9fa; /* page background */
+    color: #222; /* text */
   }
   a { text-decoration: none; color: inherit; }
 
@@ -20,9 +20,9 @@
     color: #fff;
     padding: 20px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
   }
   header img.logo {
     max-height: 80px;
@@ -33,7 +33,7 @@
     color: #fff;
   }
 
-  /* --- HERO SECTION --- */
+  /* --- HERO --- */
   .hero {
     background-color: #00a86b; /* primary green */
     color: #fff;
@@ -66,7 +66,7 @@
     font-weight: bold;
   }
   .filters button:hover {
-    background-color: #00a86b; /* primary green on hover */
+    background-color: #00a86b; /* primary green hover */
   }
 
   /* --- CARDS GRID --- */
@@ -98,116 +98,3 @@
     flex-grow: 1;
   }
   .card button {
-    background-color: #00c875; /* accent green */
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 15px;
-  }
-  .card button:hover {
-    background-color: #00a86b; /* primary green */
-  }
-
-  /* --- FOOTER --- */
-  footer {
-    background-color: #00a86b; /* primary green */
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-  }
-
-  /* --- RESPONSIVE --- */
-  @media (max-width: 600px) {
-    .hero h1 {
-      font-size: 2rem;
-    }
-    header {
-      flex-direction: column;
-      align-items: center;
-    }
-    nav a {
-      margin: 10px;
-    }
-  }
-</style>
-</head>
-<body>
-
-<!-- HEADER -->
-<header>
-  <img src="s4l_logo.png" alt="Sober4Life Logo" class="logo">
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#support">Support</a>
-    <a href="#resources">Resources</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<!-- HERO SECTION -->
-<section class="hero" id="home">
-  <h1>Sobriety. Identity. Support. For Life.</h1>
-  <img src="qr_placeholder.png" alt="Scan QR code to access portal" class="qr">
-</section>
-
-<!-- FILTER BUTTONS -->
-<div class="filters">
-  <button data-category="all">All</button>
-  <button data-category="immediate">Immediate Help</button>
-  <button data-category="wellness">Wellness</button>
-  <button data-category="community">Community</button>
-</div>
-
-<!-- CARDS GRID -->
-<section class="cards">
-  <div class="card" data-category="immediate">
-    <img src="partner1_logo.png" alt="Partner 1 Logo">
-    <h3>Partner 1</h3>
-    <p>Immediate support and resources for sobriety.</p>
-    <button onclick="window.open('#','_blank')">Visit</button>
-  </div>
-  <div class="card" data-category="wellness">
-    <img src="partner2_logo.png" alt="Partner 2 Logo">
-    <h3>Partner 2</h3>
-    <p>Health and wellness support to strengthen recovery.</p>
-    <button onclick="window.open('#','_blank')">Visit</button>
-  </div>
-  <div class="card" data-category="community">
-    <img src="partner3_logo.png" alt="Partner 3 Logo">
-    <h3>Partner 3</h3>
-    <p>Connect with sober community events and groups.</p>
-    <button onclick="window.open('#','_blank')">Visit</button>
-  </div>
-  <!-- Add more cards as needed -->
-</section>
-
-<!-- FOOTER -->
-<footer>
-  &copy; 2026 Sober4Life. Sobriety. Identity. Support. For Life.
-</footer>
-
-<!-- FILTERING SCRIPT -->
-<script>
-  const filterButtons = document.querySelectorAll('.filters button');
-  const cards = document.querySelectorAll('.card');
-
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const category = btn.getAttribute('data-category');
-      cards.forEach(card => {
-        if(category === 'all' || card.getAttribute('data-category') === category) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
-</script>
-
-</body>
-</html>
