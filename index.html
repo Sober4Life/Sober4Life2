@@ -170,4 +170,92 @@
   <img src="https://via.placeholder.com/80?text=Lifeline" alt="Lifeline">
   <h3>Lifeline</h3>
   <p>24/7 crisis support and suicide prevention hotline.</p>
-  <button onclick="window.open('https://www.lifeline.org.au','_blank'_
+  <button onclick="window.open('https://www.lifeline.org.au','_blank')">Visit</button>
+</div>
+
+<div class="card" data-category="immediate">
+  <img src="https://via.placeholder.com/80?text=Ask+Izzy" alt="Ask Izzy">
+  <h3>Ask Izzy</h3>
+  <p>Searchable directory of shelters and support services nationwide.</p>
+  <button onclick="window.open('https://www.askizzy.org.au','_blank')">Visit</button>
+</div>
+
+<div class="card" data-category="immediate">
+  <img src="https://via.placeholder.com/80?text=Beyond+Blue" alt="Beyond Blue">
+  <h3>Beyond Blue</h3>
+  <p>Mental health support and resources for depression and anxiety.</p>
+  <button onclick="window.open('https://www.beyondblue.org.au','_blank')">Visit</button>
+</div>
+
+<div class="card" data-category="immediate">
+  <img src="https://via.placeholder.com/80?text=ADF" alt="Alcohol & Drug Foundation">
+  <h3>Alcohol & Drug Foundation</h3>
+  <p>Information and support for drug and alcohol issues.</p>
+  <button onclick="window.open('https://adf.org.au','_blank')">Visit</button>
+</div>
+
+<!-- Wellness -->
+<div class="card" data-category="wellness">
+  <img src="https://via.placeholder.com/80?text=Headspace" alt="Headspace">
+  <h3>Headspace</h3>
+  <p>Mental health services for youth and young adults.</p>
+  <button onclick="window.open('https://headspace.org.au','_blank')">Visit</button>
+</div>
+
+<div class="card" data-category="wellness">
+  <img src="https://via.placeholder.com/80?text=Fitness" alt="Fitness & Wellness">
+  <h3>Fitness & Wellness</h3>
+  <p>Physical health resources to support recovery.</p>
+  <button onclick="window.open('#','_blank')">Visit</button>
+</div>
+
+<!-- Community -->
+<div class="card" data-category="community">
+  <img src="https://via.placeholder.com/80?text=SMART+Recovery" alt="SMART Recovery">
+  <h3>SMART Recovery Australia</h3>
+  <p>Self-empowering support groups for addiction recovery.</p>
+  <button onclick="window.open('https://smartrecoveryaustralia.com.au','_blank')">Visit</button>
+</div>
+
+<div class="card" data-category="community">
+  <img src="https://via.placeholder.com/80?text=AA" alt="Alcoholics Anonymous">
+  <h3>Alcoholics Anonymous</h3>
+  <p>Nationwide fellowship groups to support sobriety.</p>
+  <button onclick="window.open('https://aa.org.au','_blank')">Visit</button>
+</div>
+
+<div class="card" data-category="community">
+  <img src="https://via.placeholder.com/80?text=NA" alt="Narcotics Anonymous">
+  <h3>Narcotics Anonymous</h3>
+  <p>Peer support and meetings across Australia.</p>
+  <button onclick="window.open('https://na.org.au','_blank')">Visit</button>
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  &copy; 2026 Sober4Life. Sobriety. Identity. Support. For Life.
+</footer>
+
+<!-- FILTERING SCRIPT -->
+<script>
+const filterButtons = document.querySelectorAll('.filters button');
+const cards = document.querySelectorAll('.card');
+
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const category = btn.getAttribute('data-category');
+    cards.forEach(card => {
+      if(category === 'all' || card.getAttribute('data-category') === category) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>
