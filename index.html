@@ -1,222 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sober4Life Support Portal</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
-<style>
-  body { margin:0; font-family:'Roboto',sans-serif; background:#f8f9fa; color:#222; }
-  
-  /* HEADER */
-  header { position: sticky; top:0; background:#00a86b; color:white; padding:15px 0; text-align:center; z-index:100; }
-  header img.logo { max-height:70px; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sober4Life Portal</title>
 
-  /* HERO */
-  .hero { width:100%; padding:80px 20px; text-align:center; background: linear-gradient(135deg,#00c875,#00a86b); color:white; }
-  .hero h1 { font-family:'Montserrat',sans-serif; font-size:2.8rem; margin-bottom:15px; }
-  .hero p { font-size:1.2rem; margin-bottom:25px; }
-  .hero img.qr { width:150px; height:150px; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.2); animation:pulse 2s infinite; }
-  @keyframes pulse {0%,100%{transform:scale(1);}50%{transform:scale(1.05);} }
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --card: #151922;
+      --soft: #1f2430;
+      --text: #f2f4f8;
+      --muted: #9aa3b2;
+      --accent: #4ade80;
+      --radius: 18px;
+    }
 
-  /* SECTIONS */
-  section { padding:40px 20px; max-width:1200px; margin:auto; }
-  section h2 { font-family:'Montserrat',sans-serif; margin-bottom:20px; font-size:2rem; color:#00a86b; }
+    * {
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+    }
 
-  /* CARD GRID */
-  .card-container { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
-  .card {
-    background:white; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.1);
-    padding:20px; text-align:center; cursor:pointer;
-    flex:1 1 250px; max-width:300px;
-    transition:transform 0.25s, box-shadow 0.25s;
-  }
-  .card:hover { transform:translateY(-6px); box-shadow:0 10px 20px rgba(0,0,0,0.15); }
-  .card img { max-height:80px; margin-bottom:12px; }
-  .card h3 { font-family:'Montserrat',sans-serif; margin-bottom:8px; }
-  .card p { font-size:0.95rem; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #0b0d10 0%, #0e1117 100%);
+      color: var(--text);
+    }
 
-  /* MODAL */
-  .modal { display:none; position:fixed; z-index:1000; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; }
-  .modal-content {
-    background:white; border-radius:15px; padding:30px; width:90%; max-width:480px; text-align:center; position:relative;
-  }
-  .modal-content img { max-height:80px; margin-bottom:15px; }
-  .modal-content button {
-    background:#00c875; color:white; border:none; border-radius:8px; padding:10px 15px;
-    cursor:pointer; font-weight:bold; margin-top:15px;
-  }
-  .modal-content button:hover { background:#00a86b; }
-  .close-modal { position:absolute; top:10px; right:15px; background:none; border:none; font-size:1.5rem; cursor:pointer; }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 18px 80px;
+    }
 
-  /* FOOTER */
-  footer { text-align:center; padding:20px; background:#00a86b; color:white; font-size:0.9rem; margin-top:40px; }
-</style>
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: center;
+      margin: 12px 0 40px;
+    }
+
+    .logo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: radial-gradient(circle at top, #1f2937, #020617);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      letter-spacing: 1px;
+      font-size: 18px;
+      border: 1px solid #1f2937;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .intro h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* SECTIONS */
+    section {
+      margin-bottom: 64px;
+    }
+
+    section h2 {
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+
+    section p.section-note {
+      color: var(--muted);
+      margin-bottom: 22px;
+      max-width: 600px;
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--card), var(--soft));
+      border-radius: var(--radius);
+      padding: 22px;
+      text-decoration: none;
+      color: var(--text);
+      position: relative;
+      overflow: hidden;
+      transition: transform .2s ease, box-shadow .2s ease;
+      min-height: 140px;
+      border: 1px solid #202637;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.4);
+    }
+
+    .card span {
+      display: block;
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    .card .tag {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 12px;
+      color: var(--accent);
+      opacity: .9;
+    }
+
+    /* SPONSORS */
+    .sponsor-box {
+      background: dashed;
+      border: 1px dashed #2a3144;
+      border-radius: var(--radius);
+      padding: 32px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 80px;
+    }
+
+    @media (max-width: 480px) {
+      .intro h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- HEADER -->
-<header>
-  <img src="https://via.placeholder.com/200x70?text=Sober4Life+Logo" alt="Sober4Life Logo" class="logo">
-</header>
+  <div class="container">
 
-<!-- HERO -->
-<section class="hero">
-  <h1>Sobriety. Identity. Support. For Life.</h1>
-  <p>Your support network, anytime, anywhere.</p>
-  <img src="https://via.placeholder.com/150?text=QR+Code" alt="Scan QR code" class="qr">
-</section>
+    <!-- HEADER -->
+    <header>
+      <div class="logo">S4L</div>
+    </header>
 
-<!-- EMERGENCY -->
-<section>
-  <h2>Emergency</h2>
-  <div class="card-container">
-    <div class="card" data-name="000 Emergency" data-desc="Call 000 for life-threatening emergencies." data-link="tel:000" data-logo="https://via.placeholder.com/80?text=000">
-      <img src="https://via.placeholder.com/80?text=000" alt="000 Emergency">
-      <h3>000 Emergency</h3>
-      <p>Immediate urgent assistance needed? Call now.</p>
+    <div class="intro">
+      <h1>Sobriety. Identity. Support. For life.</h1>
+      <p>
+        This portal connects you to immediate support, recovery tools,
+        wellness options, and pathways forward — no judgement, no noise.
+      </p>
     </div>
+
+    <!-- IMMEDIATE SUPPORT -->
+    <section>
+      <h2>Immediate Support</h2>
+      <p class="section-note">
+        If things feel urgent or overwhelming, start here.
+      </p>
+
+      <div class="grid">
+        <a class="card" href="https://www.lifeline.org.au" target="_blank">
+          <strong>Lifeline</strong>
+          <span>24/7 crisis support and suicide prevention</span>
+          <div class="tag">24/7</div>
+        </a>
+
+        <a class="card" href="https://www.beyondblue.org.au" target="_blank">
+          <strong>Beyond Blue</strong>
+          <span>Mental health support, anxiety & depression</span>
+        </a>
+
+        <a class="card" href="https://askizzy.org.au" target="_blank">
+          <strong>Ask Izzy</strong>
+          <span>Find food, housing, health & crisis support near you</span>
+        </a>
+
+        <a class="card" href="https://www.triplezero.gov.au" target="_blank">
+          <strong>000 Emergency</strong>
+          <span>Police, Fire, Ambulance — immediate danger</span>
+          <div class="tag">Emergency</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- WELLNESS -->
+    <section>
+      <h2>Wellness & Recovery</h2>
+      <p class="section-note">
+        Long-term strength, structure, and healthy alternatives.
+      </p>
+
+      <div class="grid">
+        <a class="card" href="https://www.aa.org.au" target="_blank">
+          <strong>Alcoholics Anonymous</strong>
+          <span>Peer-based recovery meetings nationwide</span>
+        </a>
+
+        <a class="card" href="https://smartrecoveryaustralia.com.au" target="_blank">
+          <strong>SMART Recovery</strong>
+          <span>Evidence-based tools for addiction recovery</span>
+        </a>
+
+        <a class="card" href="https://www.headspace.org.au" target="_blank">
+          <strong>Headspace</strong>
+          <span>Mental health & wellbeing support</span>
+        </a>
+
+        <a class="card" href="#">
+          <strong>Gyms & Training</strong>
+          <span>Physical strength as recovery support</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- HOUSING -->
+    <section>
+      <h2>Housing & Homelessness</h2>
+      <p class="section-note">
+        Stability matters. These services support people without safe housing.
+      </p>
+
+      <div class="grid">
+        <a class="card" href="https://www.salvationarmy.org.au" target="_blank">
+          <strong>Salvation Army</strong>
+          <span>Housing, financial aid, recovery programs</span>
+        </a>
+
+        <a class="card" href="https://www.vinnies.org.au" target="_blank">
+          <strong>St Vincent de Paul</strong>
+          <span>Emergency relief & housing support</span>
+        </a>
+
+        <a class="card" href="https://missionaustralia.com.au" target="_blank">
+          <strong>Mission Australia</strong>
+          <span>Homelessness & community services</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- SPONSORS -->
+    <section>
+      <h2>Partners & Sponsors</h2>
+      <div class="sponsor-box">
+        Sponsor logos and partnerships will appear here.
+      </div>
+    </section>
+
+    <footer>
+      © Sober4Life — You’re not alone.
+    </footer>
+
   </div>
-</section>
-
-<!-- IMMEDIATE HELP -->
-<section>
-  <h2>Immediate Help</h2>
-  <div class="card-container">
-    <div class="card" data-name="Lifeline Australia" data-desc="24/7 crisis support and suicide prevention." data-link="https://www.lifeline.org.au" data-logo="https://via.placeholder.com/80?text=Lifeline">
-      <img src="https://via.placeholder.com/80?text=Lifeline" alt="Lifeline Logo">
-      <h3>Lifeline Australia</h3>
-      <p>National crisis support when you need to talk or reach out.</p>
-    </div>
-    <div class="card" data-name="Ask Izzy" data-desc="Find nearby services including addiction support." data-link="https://askizzy.org.au" data-logo="https://via.placeholder.com/80?text=Ask+Izzy">
-      <img src="https://via.placeholder.com/80?text=Ask+Izzy" alt="Ask Izzy Logo">
-      <h3>Ask Izzy</h3>
-      <p>Locate support services near you across Australia.</p>
-    </div>
-  </div>
-</section>
-
-<!-- WELLNESS -->
-<section>
-  <h2>Wellness Support</h2>
-  <div class="card-container">
-    <div class="card" data-name="Mental Health Australia" data-desc="Peak national body for mental wellbeing." data-link="https://www.mhaustralia.org" data-logo="https://via.placeholder.com/80?text=MHAustralia">
-      <img src="https://via.placeholder.com/80?text=MHAustralia" alt="Mental Health Australia">
-      <h3>Mental Health Australia</h3>
-      <p>National advocacy, resources, and mental health info.</p>
-    </div>
-    <div class="card" data-name="Neami National" data-desc="Mental health and wellbeing support services nationwide." data-link="https://www.neaminational.org.au" data-logo="https://via.placeholder.com/80?text=Neami">
-      <img src="https://via.placeholder.com/80?text=Neami" alt="Neami National">
-      <h3>Neami National</h3>
-      <p>Community‑based mental health and wellbeing supports.</p>
-    </div>
-    <div class="card" data-name="Smiling Mind" data-desc="Free mindfulness and meditation tools for mental health." data-link="https://www.smilingmind.com.au" data-logo="https://via.placeholder.com/80?text=Smiling+Mind">
-      <img src="https://via.placeholder.com/80?text=Smiling+Mind" alt="Smiling Mind">
-      <h3>Smiling Mind</h3>
-      <p>Evidence‑based mental fitness tools and meditation app.</p>
-    </div>
-  </div>
-</section>
-
-<!-- HOMELESSNESS SUPPORT -->
-<section>
-  <h2>Homelessness Support</h2>
-  <div class="card-container">
-    <div class="card" data-name="Mission Australia" data-desc="Housing and homelessness support services across Australia." data-link="https://www.missionaustralia.com.au" data-logo="https://via.placeholder.com/80?text=Mission+Australia">
-      <img src="https://via.placeholder.com/80?text=Mission+Australia" alt="Mission Australia">
-      <h3>Mission Australia</h3>
-      <p>National homelessness relief, housing and community services.</p>
-    </div>
-    <div class="card" data-name="St Vincent de Paul Society" data-desc="Homelessness, housing aid and community support." data-link="https://www.vinnies.org.au" data-logo="https://via.placeholder.com/80?text=Vinnies">
-      <img src="https://via.placeholder.com/80?text=Vinnies" alt="Vinnies">
-      <h3>St Vincent de Paul</h3>
-      <p>Emergency housing advice and homelessness support.</p>
-    </div>
-    <div class="card" data-name="Homelessness Australia" data-desc="National peak body advocating to end homelessness." data-link="https://homelessnessaustralia.org.au" data-logo="https://via.placeholder.com/80?text=Homelessness+AU">
-      <img src="https://via.placeholder.com/80?text=Homelessness+AU" alt="Homelessness Australia">
-      <h3>Homelessness Australia</h3>
-      <p>Advocacy and national homelessness resources.</p>
-    </div>
-    <div class="card" data-name="Launch Housing" data-desc="Supportive housing and crisis accommodation." data-link="https://www.launchhousing.org.au" data-logo="https://via.placeholder.com/80?text=Launch+Housing">
-      <img src="https://via.placeholder.com/80?text=Launch+Housing" alt="Launch Housing">
-      <h3>Launch Housing</h3>
-      <p>Supportive housing and homelessness programs.</p>
-    </div>
-  </div>
-</section>
-
-<!-- COMMUNITY -->
-<section>
-  <h2>Community Support</h2>
-  <div class="card-container">
-    <div class="card" data-name="SMART Recovery Australia" data-desc="Peer support for addiction recovery." data-link="https://smartrecoveryaustralia.com.au" data-logo="https://via.placeholder.com/80?text=SMART">
-      <img src="https://via.placeholder.com/80?text=SMART" alt="SMART Recovery">
-      <h3>SMART Recovery</h3>
-      <p>Evidence‑based addiction recovery support.</p>
-    </div>
-    <div class="card" data-name="Alcoholics Anonymous Australia" data-desc="Peer‑led fellowship for sobriety support." data-link="https://aa.org.au" data-logo="https://via.placeholder.com/80?text=AA">
-      <img src="https://via.placeholder.com/80?text=AA" alt="Alcoholics Anonymous">
-      <h3>Alcoholics Anonymous</h3>
-      <p>Mutual support and community meetings for sobriety.</p>
-    </div>
-    <div class="card" data-name="ReachOut Australia" data-desc="Mental health resources and peer support for young people." data-link="https://au.reachout.com" data-logo="https://via.placeholder.com/80?text=ReachOut">
-      <img src="https://via.placeholder.com/80?text=ReachOut" alt="ReachOut">
-      <h3>ReachOut Australia</h3>
-      <p>Online wellbeing support and resilience resources.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SPONSORS -->
-<section>
-  <h2>Sponsors</h2>
-  <div class="card-container">
-    <div class="card" data-name="Sponsor Placeholder" data-desc="Sponsor content goes here." data-link="#" data-logo="https://via.placeholder.com/80?text=Sponsor">
-      <img src="https://via.placeholder.com/80?text=Sponsor" alt="Sponsor">
-      <h3>Sponsor</h3>
-      <p>Future partner logos and links.</p>
-    </div>
-  </div>
-</section>
-
-<!-- MODAL -->
-<div class="modal" id="serviceModal">
-  <div class="modal-content">
-    <button class="close-modal">&times;</button>
-    <img id="modal-logo" src="" alt="">
-    <h3 id="modal-name"></h3>
-    <p id="modal-desc"></p>
-    <button onclick="visitService()">Go to Official Site</button>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  &copy; 2026 Sober4Life. Sobriety. Identity. Support. For Life.
-</footer>
-
-<script>
-  const cards = document.querySelectorAll('.card');
-  const modal = document.getElementById('serviceModal');
-  const modalLogo = document.getElementById('modal-logo');
-  const modalName = document.getElementById('modal-name');
-  const modalDesc = document.getElementById('modal-desc');
-  let currentLink = '';
-
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      modalLogo.src = card.getAttribute('data-logo');
-      modalName.textContent = card.getAttribute('data-name');
-      modalDesc.textContent = card.getAttribute('data-desc');
-      currentLink = card.getAttribute('data-link');
-      modal.style.display = 'flex';
-    });
-  });
-
-  document.querySelector('.close-modal').addEventListener('click', () => { modal.style.display='none'; });
-  window.onclick = e => { if(e.target===modal) modal.style.display='none'; };
-  function visitService(){ if(currentLink && currentLink!=="#") window.open(currentLink,'_blank'); }
-</script>
 
 </body>
 </html>
